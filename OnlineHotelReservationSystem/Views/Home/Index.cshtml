@@ -1,31 +1,103 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "奢华至尊住宿在豪华酒店和度假胜地 | Kempinski Hotels";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.min.js"></script>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<h1 class="book">欢迎下榻桂林凯宾斯基酒店</h1>
+
+<div class="reg">
+
+    <h1>请预订您的套房！</h1>
+
+    <div class="members">
+        <div class="adult">
+            <h2>成人数量</h2>
+            <div class="dropdown-button">
+                <select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"flat"}'>
+                    <option value="">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="child">
+            <h2>小孩数量</h2>
+            <div class="dropdown-button">
+                <select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"flat"}'>
+                    <option value="">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+        </div>
+        <div class="clear"></div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+    <div class="suite">
+        <div class="dropdown-button">
+            <h2>套房类型</h2>
+            <select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"flat"}'>
+                <option value="0">-</option>
+                <option value="1">单人间</option>
+                <option value="2">顶级单人间</option>
+                <option value="2">双人间</option>
+                <option value="2">顶级双人间</option>
+                <option value="3">豪华套房</option>
+                <option value="4">行政套房</option>
+                <option value="4">海景套房</option>
+                <option value="4">总统套房</option>
+                <option value="3">顶楼</option>
+            </select>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+    <div class="book-pag">
+        <h2>选择日期</h2>
+        <div class="book-pag-frm1">
+            <label>到达</label>
+            <input class="date" id="datepicker1" type="text" value="Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required="">
+        </div>
+        <div class="book-pag-frm2">
+            <label>离开</label>
+            
+            <input class="date" id="datepicker2" type="text" value="Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required="">
+        </div>
+        <div class="clear"></div>
     </div>
+
+    <!--Date Picker-->
+
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker,#datepicker1,#datepicker2").datepicker();
+        });
+    </script>
+    <!--//Date Picker-->
+
+    <div class="rs">
+        <div class="check_box"> <div class="radio"> <label><input type="checkbox" name="radio" checked=""><i></i>使用套房服务</label> </div></div>
+    </div>
+
+    <div class="food">
+        <h2>选择美食</h2>
+        <div class="radio-btns">
+            <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio" checked=""><i></i>本地</label> </div></div>
+            <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>多样</label> </div></div>
+        </div>
+    </div>
+
+    <div class="submit">
+        <input type="submit" class="book" value="立即预定">
+    </div>
+
 </div>
