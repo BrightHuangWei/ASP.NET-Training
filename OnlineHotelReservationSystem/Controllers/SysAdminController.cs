@@ -6,16 +6,15 @@ using System.Web.Mvc;
 
 namespace OnlineHotelReservationSystem.Controllers
 {
-    public class ConsumerController : Controller
+    public class SysAdminController : Controller
     {
-        // GET: Consumer
+        // GET: SysAdmin
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult Booking()
+        public ActionResult SysAdminLogin()
         {
-
             return View();
         }
     }
