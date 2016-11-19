@@ -6,98 +6,107 @@
 <link href="~/Content/css/style.css" rel="stylesheet" />
 <script src="~/Scripts/jquery.min.js"></script>
 
-<h1 class="book">欢迎下榻桂林凯宾斯基酒店</h1>
+<h1 class="book">欢迎下榻</h1>
+@*桂林凯宾斯基酒店*@
+@using (Html.BeginForm("", ""))
+{
 
-<div class="reg">
 
-    <h1>请预订您的套房！</h1>
+    <div class="reg">
 
-    <div class="members">
-        <div class="adult">
-            <h2>成人数量</h2>
+        <h1>请预订您的套房！</h1>
+
+        <div class="members">
+            <div class="adult">
+                <h2>成人数量</h2>
+                <div class="dropdown-button">
+                    <select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"flat"}'>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                @*
+                    @Html.DropDownList("numAdults", ViewData["numAdults"] as IEnumerable<SelectListItem>,new { @class = "dropdown-button" })
+                *@
+            </div>
+
+            <div class="child">
+                <h2>小孩数量</h2>
+                <div class="dropdown-button">
+                    <select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"flat"}'>
+                        <option value="">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="suite">
             <div class="dropdown-button">
+                <h2>套房类型</h2>
                 <select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"flat"}'>
-                    <option value="">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+                    <option value="0">-</option>
+                    <option value="1">单人间</option>
+                    <option value="2">顶级单人间</option>
+                    <option value="2">双人间</option>
+                    <option value="2">顶级双人间</option>
+                    <option value="3">豪华套房</option>
+                    <option value="4">行政套房</option>
+                    <option value="4">海景套房</option>
+                    <option value="4">总统套房</option>
+                    <option value="3">顶楼</option>
                 </select>
             </div>
         </div>
 
-        <div class="child">
-            <h2>小孩数量</h2>
-            <div class="dropdown-button">
-                <select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"flat"}'>
-                    <option value="">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
+        <div class="book-pag">
+            <h2>选择日期</h2>
+            <div class="book-pag-frm1">
+                <label>到达</label>
+                <input class="date" id="datepicker1" type="text" value="Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required="">
+            </div>
+            <div class="book-pag-frm2">
+                <label>离开</label>
+
+                <input class="date" id="datepicker2" type="text" value="Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required="">
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <!--Date Picker-->
+
+        <script src="~/Scripts/jquery-ui.js"></script>
+        <script>
+            $(function () {
+                $("#datepicker,#datepicker1,#datepicker2").datepicker();
+            });
+        </script>
+        <!--//Date Picker-->
+
+        <div class="rs">
+            <div class="check_box"> <div class="radio"> <label><input type="checkbox" name="radio" checked=""><i></i>使用套房服务</label> </div></div>
+        </div>
+
+        <div class="food">
+            <h2>选择美食</h2>
+            <div class="radio-btns">
+                <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio" checked=""><i></i>本地</label> </div></div>
+                <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>多样</label> </div></div>
             </div>
         </div>
-        <div class="clear"></div>
-    </div>
 
-    <div class="suite">
-        <div class="dropdown-button">
-            <h2>套房类型</h2>
-            <select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"flat"}'>
-                <option value="0">-</option>
-                <option value="1">单人间</option>
-                <option value="2">顶级单人间</option>
-                <option value="2">双人间</option>
-                <option value="2">顶级双人间</option>
-                <option value="3">豪华套房</option>
-                <option value="4">行政套房</option>
-                <option value="4">海景套房</option>
-                <option value="4">总统套房</option>
-                <option value="3">顶楼</option>
-            </select>
+        <div class="submit">
+            <input type="submit" class="book" value="立即预定">
         </div>
+
     </div>
 
-    <div class="book-pag">
-        <h2>选择日期</h2>
-        <div class="book-pag-frm1">
-            <label>到达</label>
-            <input class="date" id="datepicker1" type="text" value="Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required="">
-        </div>
-        <div class="book-pag-frm2">
-            <label>离开</label>
-            
-            <input class="date" id="datepicker2" type="text" value="Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required="">
-        </div>
-        <div class="clear"></div>
-    </div>
-
-    <!--Date Picker-->
-
-    <script src="~/Scripts/jquery-ui.js"></script>
-    <script>
-        $(function () {
-            $("#datepicker,#datepicker1,#datepicker2").datepicker();
-        });
-    </script>
-    <!--//Date Picker-->
-
-    <div class="rs">
-        <div class="check_box"> <div class="radio"> <label><input type="checkbox" name="radio" checked=""><i></i>使用套房服务</label> </div></div>
-    </div>
-
-    <div class="food">
-        <h2>选择美食</h2>
-        <div class="radio-btns">
-            <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio" checked=""><i></i>本地</label> </div></div>
-            <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio"><i></i>多样</label> </div></div>
-        </div>
-    </div>
-
-    <div class="submit">
-        <input type="submit" class="book" value="立即预定">
-    </div>
-
-</div>
+}
